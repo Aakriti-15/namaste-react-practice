@@ -32,6 +32,8 @@ const Header =()=>{
                 <li>Cart</li>
             </ul>
         </div>
+        <button>Login</button>
+        <button>Log Out</button>
         </div>
     )//this title could also be written as <title/> as it is also a functionl component 
 }
