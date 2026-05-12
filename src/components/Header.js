@@ -1,6 +1,10 @@
 import { useState } from "react"; 
 
+const loggedInUser = ()=>{
+    //API call to check authentication
+    return true;
 
+}
 
 export const Title= ()=>{
     return(
@@ -17,6 +21,10 @@ export const Title= ()=>{
 const Header =()=>{
     
     // const[title, setTitle]= useState("Food Villa");//if my title changes it will be updated very very quickly
+   
+   
+   const [isLoggedIn,setIsLoggedIn] = useState(false);
+
     return (
     <div className ="header">
         {Title()}
@@ -32,8 +40,11 @@ const Header =()=>{
                 <li>Cart</li>
             </ul>
         </div>
-        <button>Login</button>
-        <button>Log Out</button>
+        {isLoggedIn ? (
+            <button onClick ={() => setIsLoggedIn(false)}>Logout</button>
+        ) : (
+            <button onClick ={() => setIsLoggedIn(true)}>Login</button>
+        )}
         </div>
     )//this title could also be written as <title/> as it is also a functionl component 
 }

@@ -1,32 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header, {Title} from "./components/Header";
+import Header, { Title } from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import { IMG_CDN_URL } from "./constants";
-const AppLayout =()=>{
-    return(
-        
-            <>
-            <Header/>
-            <Body/>
-            <Footer/>
-            </>
-        
-    )
-}
- const root =  ReactDOM.createRoot(document.getElementById("root"))// whatever you pass inside it , it becomes the root , when ever you want to use inside anything , we use create root 
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
+};
+const root = ReactDOM.createRoot(document.getElementById("root")); // whatever you pass inside it , it becomes the root , when ever you want to use inside anything , we use create root
 
-    root.render(<AppLayout/>);  
+root.render(<AppLayout />);
 
+//inline style in react => style = {{color: "red"}} => this is an object in js and we are passing it in jsx
+//class in react => className => this is because class is a reserved keyword in js and we cannot use it as an attribute in jsx so we use className instead of class
 
+//props is obj (properties)
 
-    //inline style in react => style = {{color: "red"}} => this is an object in js and we are passing it in jsx
-    //class in react => className => this is because class is a reserved keyword in js and we cannot use it as an attribute in jsx so we use className instead of class
-
-    //props is obj (properties)
-
-            {/* <RestrauntCard {...restrauntList[0].info}/>
+{
+  /* <RestrauntCard {...restrauntList[0].info}/>
             <RestrauntCard {...restrauntList[1].info}/>
             <RestrauntCard {...restrauntList[2].info}/>
             <RestrauntCard {...restrauntList[3].info}/>
@@ -40,13 +37,10 @@ const AppLayout =()=>{
             <RestrauntCard {...restrauntList[11].info}/>
             <RestrauntCard {...restrauntList[12].info}/>
             <RestrauntCard {...restrauntList[13].info}/>
-            <RestrauntCard {...restrauntList[14].info}/> */}
+            <RestrauntCard {...restrauntList[14].info}/> */
+}
 
-
-            
-
-       
-//React.fragment => empty tag => <> </> 
+//React.fragment => empty tag => <> </>
 /**
              * Header
                 -Logo
@@ -63,23 +57,22 @@ const AppLayout =()=>{
                 -links
              */
 //React.createElement => Object => HTML(DOM)
-    
-         //this will be a huge mess
-    //when we have to pass in multiple children , we pass in the form of array
-    //components =>functional component => it is a js function that returns a react element (jsx) 
+
+//this will be a huge mess
+//when we have to pass in multiple children , we pass in the form of array
+//components =>functional component => it is a js function that returns a react element (jsx)
 
 //JSX => we want to write html using javascript
 //  const heading = <h1 id="title" key="h2">Namaste React</h1>
-//this is a perfectly valid js code 
+//this is a perfectly valid js code
 //this is a react element
 //if we have a normal variable we will write it normally in parenthesis
 //if its functional component we will write it in the form of tag or like function()
 //this is a functional component
 //this can also be rendered in side another functional component
 
-
 // const Title = () => {
-    
+
 //    return(
 //     <a href = "/">
 //      <img className ="logo"
@@ -87,15 +80,6 @@ const AppLayout =()=>{
 //     src="https://marketplace.canva.com/EAGXsRURT9o/1/0/1600w/canva-yellow-and-brown-kitchen-food-logo-JrzZUwc_CLQ.jpg"/>
 // </a>
 // )};
-
-
-
-
-
-
-
-
-
 
 // const Header =()=>{
 //     return (
@@ -110,15 +94,12 @@ const AppLayout =()=>{
 //             </ul>
 //         </div>
 //         </div>
-//     )//this title could also be written as <title/> as it is also a functionl component 
+//     )//this title could also be written as <title/> as it is also a functionl component
 // }
 //this is a react component
 
 //  Config Driven UI
 //The data is controlled by backend
-
-
-
 
 // const config =[
 //     {
@@ -146,5 +127,3 @@ const AppLayout =()=>{
 //     }]
 //     }
 // ]
-
-
