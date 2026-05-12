@@ -16,12 +16,9 @@ const Body = () => {
   const [filteredRestraunts, setFilteredRestraunts] = useState([]); // this is a hook which is used to manage the state of a component and it returns an array with two values , first value is the current state and second value is a function which is used to update the state
   const [searchText, setSearchInput] = useState(""); // this is a hook which is used to manage the state of a component and it returns an array with two values , first value is the current state and second value is a function which is used to update the state
 
-  //empty dependency array => once after render
-  // dep array [searchText] => once after initial render + everytime after render when searchText changes
-  useEffect(() => {
-    //API Call
-    getRestraunt();
-  }, []); //this another function is a callback function , it will be called when ever useEffect want it to call
+//empty dependency array => once after render
+// dep array [searchText] => once after initial render + everytime after render when searchText changes
+//this another function is a callback function , it will be called when ever useEffect want it to call
 
   async function getRestraunt() {
     const data = await fetch(
