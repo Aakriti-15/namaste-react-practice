@@ -1,4 +1,6 @@
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
+import Logo from "../assets/img/mom.png";
+import {Link} from "react-router-dom";
 
 const loggedInUser = ()=>{
     //API call to check authentication
@@ -13,7 +15,7 @@ export const Title= ()=>{
     <img 
     className="logo"
     alt="logo"
-    src="https://marketplace.canva.com/EAGXsRURT9o/1/0/1600w/canva-yellow-and-brown-kitchen-food-logo-JrzZUwc_CLQ.jpg"/>
+    src={Logo} />
     </a>
     );
 }
@@ -25,6 +27,13 @@ const Header =()=>{
    
    const [isLoggedIn,setIsLoggedIn] = useState(false);
 
+useEffect(()=>{
+console.log("useEffect");
+},[])
+
+console.log("render")
+
+
     return (
     <div className ="header">
         {Title()}
@@ -34,10 +43,18 @@ const Header =()=>{
         </button> */}
         <div className="nav-items">
             <ul>
+               <Link to ="/">
                 <li>Home</li>
+                </Link>
+                <Link to ="/about">
                 <li>About</li>
-                <li>Contact</li>
+                </Link>
+               <Link to ="/contact"> 
+               <li>Contact</li>
+                </Link>
+                <Link to ="/cart">
                 <li>Cart</li>
+                </Link>
             </ul>
         </div>
         {isLoggedIn ? (

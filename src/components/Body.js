@@ -16,6 +16,11 @@ const Body = () => {
   const [filteredRestraunts, setFilteredRestraunts] = useState([]); // this is a hook which is used to manage the state of a component and it returns an array with two values , first value is the current state and second value is a function which is used to update the state
   const [searchText, setSearchInput] = useState(""); // this is a hook which is used to manage the state of a component and it returns an array with two values , first value is the current state and second value is a function which is used to update the state
 
+
+  useEffect(() => {
+    getRestraunt();
+  }, []);//if we will have nothing here means useEffect does not depend on anything 
+
 //empty dependency array => once after render
 // dep array [searchText] => once after initial render + everytime after render when searchText changes
 //this another function is a callback function , it will be called when ever useEffect want it to call
@@ -48,18 +53,19 @@ const Body = () => {
   //this useEffect will be called when the use Effect wants to be called
   //after every render it will call the function that i will pass inside it
 
-  console.log("render");
+  
 
   //not render component (early return)
   if (!allRestraunts) return null;
 
-  if (filteredRestraunts?.length == 0) return <h1>Match your filter</h1>;
+//   if (filteredRestraunts?.length == 0) 
+//     return <h1>Match your filter</h1>;
 
   //conditional rendering
   //if restraunts is empty -> shimer ui
   //if restraunts has data -> actual data ui
 
-  return filteredRestraunts.length == 0 ? (
+  return allRestraunts?.length == 0 ? (
     <Shimmer />
   ) : (
     <>
