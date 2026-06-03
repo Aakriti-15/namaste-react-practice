@@ -7,9 +7,15 @@ class Profile extends React.Component{
             count: 0,
             count2: 0,
         };
+        console.log("Constructor");
+    }
+    componenetDidMount() {
+
+        console.log("componentDidMount"); 
     }
       render(){
-        // const {count} = this.state;
+        const {count} = this.state;
+        console.log("render");
         return(
             <div>
 
@@ -23,6 +29,7 @@ class Profile extends React.Component{
             // Never do this.state.count = something
             this.setState({
                 count:1,
+                count2:2,
             })
         }}>SetCount</button>
          </div>
